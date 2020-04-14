@@ -21,7 +21,7 @@ export const featureReducer = (state = initialState, action) => {
     console.log('returned state via action', state, action);
     switch(action.type) {
         //case
-        case 'BUY_ITEM':
+        case BUY_ITEM:
             return {
                 ...state,
                 additionalPrice: state.additionalPrice + action.payload.price,
@@ -34,7 +34,7 @@ export const featureReducer = (state = initialState, action) => {
                 }
             };
         //case
-        case 'REMOVE_ITEM':
+        case REMOVE_ITEM:
             return {
                 ...state,
                 additionalPrice: state.additionalPrice - action.payload.price,
