@@ -1,3 +1,4 @@
+import { BUY_ITEM, REMOVE_ITEM } from '../actions/index.js';
 
 const initialState = {
     additionalPrice: 0,
@@ -19,6 +20,7 @@ const initialState = {
 export const featureReducer = (state = initialState, action) => {
     console.log('returned state via action', state, action);
     switch(action.type) {
+        //case
         case 'BUY_ITEM':
             return {
                 ...state,
@@ -31,7 +33,18 @@ export const featureReducer = (state = initialState, action) => {
                     ]
                 }
             };
-        
         //case
+        case 'REMOVE_ITEM':
+            return {
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car: {
+                    ...state.car,
+                    features: state.car.features.filter(feature => feature.id !== action.payload.id)
+                }
+            }
+            //default return of state
+            default:
+                return state;
     };
 };

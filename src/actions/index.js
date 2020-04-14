@@ -1,13 +1,11 @@
-export const types = {
-    BUY_ITEM = 'BUY_ITEM',
-    REMOVE_ITEM = 'REMOVE_ITEM'
-};
+export const BUY_ITEM = 'BUY_ITEM';
+export const REMOVE_ITEM = 'REMOVE_ITEM'
 
 
 //action option #1
 export const buyItem = feature => {
     return {
-        type: types.BUY_ITEM,
+        type: BUY_ITEM,
         payload: feature
     };
 };
@@ -15,7 +13,7 @@ export const buyItem = feature => {
 //action option #2
 export const removeItem = feature => {
     return {
-        type: types.REMOVE_ITEM,
+        type: REMOVE_ITEM,
         payload: feature
     };
 };

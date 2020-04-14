@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { useState } from 'react';
-
 import { connect } from 'react-redux';
 
 import { buyItem, removeItem } from './actions/index.js';
@@ -39,10 +37,11 @@ const App = () => {
 
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    additionalPriceOnProps: state.featureReducer.additionalPrice,
-    carDataOnProps: state.featureReducer.car,
-    additionalFeaturesOnProps: state.featureReducer.additionalFeatures
+    additionalPriceOnProps: state.additionalPrice,
+    carDataOnProps: state.car,
+    additionalFeaturesOnProps: state.additionalFeatures
   };
 };
 
