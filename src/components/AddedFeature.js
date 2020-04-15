@@ -1,10 +1,13 @@
 import React from 'react';
-
+//add actions to import
+import { connect } from 'react-redux';
+import { removeItem } from '../actions/index.js';
 
 const AddedFeature = props => {
 
   const removeItem = feature => {
-    props.removeFeature(feature);
+    //dispatch an action here to add an item
+    props.removeItem(feature);
   };
 
   return (
@@ -16,4 +19,5 @@ const AddedFeature = props => {
   );
 };
 
-export default AddedFeature;
+export default connect ('', { removeItem })(AddedFeature);
+console.log('removeItem display', removeItem)

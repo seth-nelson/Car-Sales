@@ -12,18 +12,22 @@ import Total from './components/Total';
 
 const App = (props) => {
 
-
+  
 
   const buyItem = feature => {
     // dipsatch an action here to add an item
-    props.addFeature(feature);
+    props.buyItem(feature);
+  };
+
+  const removeItem = feature => {
+    props.removeItem(feature);
   };
 
   return (
     <div className="boxes">
       <div className="box">
         <Header car={props.car} />
-        <AddedFeatures car={props.car} />
+        <AddedFeatures car={props.car} removeItem={removeItem} />
       </div>
       <div className="box">
         {/* change state to props since it's now passed as data into app */}
@@ -38,9 +42,9 @@ const App = (props) => {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    additionalPriceOnProps: state.additionalPrice,
-    carDataOnProps: state.car,
-    additionalFeaturesOnProps: state.additionalFeatures
+    additionalPrice: state.additionalPrice,
+    car: state.car,
+    additionalFeatures: state.additionalFeatures
   };
 };
 

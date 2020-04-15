@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import featureReducer from './reducers/index.js';
+import featureReducer from './reducers/featureReducer.js';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
