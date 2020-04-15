@@ -17,7 +17,7 @@ const initialState = {
     ]
 };
 
-export const featureReducer = (state = initialState, action) => {
+const featureReducer = (state = initialState, action) => {
     console.log('returned state via action', state, action);
     switch(action.type) {
         //case
@@ -48,3 +48,5 @@ export const featureReducer = (state = initialState, action) => {
                 return state;
     };
 };
+
+export default featureReducer;
